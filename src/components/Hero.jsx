@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import Magnetic from "./Magnetic";
 import Profile from "../assets/Profile.png";
 import { ArrowUpRight } from "lucide-react";
+import Resume from "../assets/resume.pdf";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -363,67 +364,66 @@ export default function Hero() {
             md:mt-10
           "
         >
-          <Magnetic>
-            <motion.a
-              href="/resume.pdf"
-              download="Logesh_Nithin_Resume.pdf"
-              data-cursor="link"
-              whileHover={{
-                scale: 1.04,
-              }}
-              whileTap={{
-                scale: 0.97,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-              }}
-              className="
-                group
-                inline-flex
-                items-center
-                justify-center
-                gap-3
 
-                bg-cream
-                text-ink
+<Magnetic>
+  <motion.a
+    href={Resume}
+    download="Logesh_Nithin_Resume.pdf"
+    data-cursor="link"
+    whileHover={{ scale: 1.04 }}
+    whileTap={{ scale: 0.96 }}
+    transition={{
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+    }}
+    className="
+      group
+      inline-flex
+      items-center
+      justify-center
+      gap-3
 
-                px-6
-                sm:px-8
-                py-3.5
-                sm:py-4
+      bg-cream
+      text-ink
 
-                rounded-full
+      px-6
+      sm:px-8
+      py-3.5
+      sm:py-4
 
-                font-sans
-                text-[11px]
-                sm:text-xs
-                font-semibold
+      rounded-full
 
-                tracking-[0.14em]
-                uppercase
+      font-sans
+      text-[11px]
+      sm:text-xs
+      font-semibold
 
-                transition-all
-                duration-300
+      tracking-[0.14em]
+      uppercase
 
-                hover:bg-cream/90
-              "
-            >
-              <span>Get My Resume</span>
+      transition-all
+      duration-300
 
-              <ArrowUpRight
-                size={16}
-                strokeWidth={2}
-                className="
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-0.5
-                  group-hover:-translate-y-0.5
-                "
-              />
-            </motion.a>
-          </Magnetic>
+      hover:bg-cream/90
+    "
+  >
+    <span>Get My Resume</span>
+
+    <ArrowUpRight
+      size={16}
+      strokeWidth={2}
+      className="
+        transition-transform
+        duration-300
+        group-hover:translate-x-0.5
+        group-hover:-translate-y-0.5
+      "
+    />
+  </motion.a>
+</Magnetic>
+
+
         </motion.div>
 
         {/* =====================================================
