@@ -121,7 +121,7 @@ export default function Navbar() {
               md:text-xl
               uppercase
               tracking-tight
-            text-gray-600
+            text-cream/75
              
               transition-opacity
               duration-300
