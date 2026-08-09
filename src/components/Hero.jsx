@@ -2,7 +2,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import Magnetic from "./Magnetic";
 import Profile from "../assets/Profile.png";
 import { ArrowUpRight } from "lucide-react";
-import Resume from "../assets/resume.pdf";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -373,7 +372,7 @@ export default function Hero() {
 
 <Magnetic>
   <motion.a
-    href={Resume}
+    href="/resume.pdf"
     download="Logesh_Nithin_Resume.pdf"
     data-cursor="link"
     whileHover={{ scale: 1.04 }}
