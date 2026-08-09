@@ -128,7 +128,7 @@ export default function Navbar() {
               hover:opacity-70
             "
           >
-            Logesh Nithin
+            
           </a>
 
           {/* =========================
