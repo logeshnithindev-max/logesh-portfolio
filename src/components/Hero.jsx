@@ -7,7 +7,9 @@ import Resume from "../assets/resume.pdf";
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
+  // Premium, slow, editorial ease — slight overshoot-free deceleration
   const ease = [0.16, 1, 0.3, 1];
+  const softEase = [0.19, 1, 0.22, 1];
 
   return (
     <section
@@ -27,8 +29,8 @@ export default function Hero() {
           initial={{ scaleY: 1 }}
           animate={{ scaleY: 0 }}
           transition={{
-            duration: 1.15,
-            delay: 0.05,
+            duration: 1.4,
+            delay: 0.1,
             ease: [0.76, 0, 0.24, 1],
           }}
           style={{
@@ -44,13 +46,13 @@ export default function Hero() {
         initial={
           shouldReduceMotion
             ? { opacity: 1 }
-            : { opacity: 0, y: -10 }
+            : { opacity: 0, y: -10, filter: "blur(6px)" }
         }
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{
-          delay: shouldReduceMotion ? 0 : 0.65,
-          duration: 0.6,
-          ease,
+          delay: shouldReduceMotion ? 0 : 1.35,
+          duration: 1,
+          ease: softEase,
         }}
         className="
           absolute
@@ -105,18 +107,19 @@ export default function Hero() {
         <motion.div
           initial={
             shouldReduceMotion
-              ? { opacity: 1, scale: 1, y: 0 }
-              : { opacity: 0, scale: 1.12, y: 35 }
+              ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
+              : { opacity: 0, scale: 1.18, y: 60, filter: "blur(18px)" }
           }
           animate={{
             opacity: 1,
             scale: 1,
             y: 0,
+            filter: "blur(0px)",
           }}
           transition={{
-            delay: shouldReduceMotion ? 0 : 0.35,
-            duration: 1.25,
-            ease,
+            delay: shouldReduceMotion ? 0 : 0.4,
+            duration: 2.1,
+            ease: softEase,
           }}
           className="
             relative
@@ -241,16 +244,17 @@ export default function Hero() {
           initial={
             shouldReduceMotion
               ? { opacity: 1, y: 0 }
-              : { opacity: 0, y: 12 }
+              : { opacity: 0, y: 12, filter: "blur(4px)" }
           }
           animate={{
             opacity: 1,
             y: 0,
+            filter: "blur(0px)",
           }}
           transition={{
-            delay: shouldReduceMotion ? 0 : 0.65,
-            duration: 0.7,
-            ease,
+            delay: shouldReduceMotion ? 0 : 0.75,
+            duration: 0.9,
+            ease: softEase,
           }}
           className="mb-5 md:mb-7"
         >
@@ -277,18 +281,18 @@ export default function Hero() {
             max-w-[900px]
           "
         >
-          <Line delay={0.72} reduced={shouldReduceMotion}>
+          <Line delay={0.95} reduced={shouldReduceMotion}>
             I'm a{" "}
             <span className="italic font-light text-cream/75">
               creative
             </span>
           </Line>
 
-          <Line delay={0.84} reduced={shouldReduceMotion}>
+          <Line delay={1.15} reduced={shouldReduceMotion}>
             UI/UX &amp; product
           </Line>
 
-          <Line delay={0.96} reduced={shouldReduceMotion}>
+          <Line delay={1.35} reduced={shouldReduceMotion}>
             designer
           </Line>
         </h1>
@@ -300,16 +304,17 @@ export default function Hero() {
           initial={
             shouldReduceMotion
               ? { opacity: 1, y: 0 }
-              : { opacity: 0, y: 20 }
+              : { opacity: 0, y: 24, filter: "blur(8px)" }
           }
           animate={{
             opacity: 1,
             y: 0,
+            filter: "blur(0px)",
           }}
           transition={{
-            delay: shouldReduceMotion ? 0 : 1.15,
-            duration: 0.8,
-            ease,
+            delay: shouldReduceMotion ? 0 : 1.7,
+            duration: 1.1,
+            ease: softEase,
           }}
           className="
             mt-7
@@ -347,16 +352,17 @@ export default function Hero() {
           initial={
             shouldReduceMotion
               ? { opacity: 1, y: 0 }
-              : { opacity: 0, y: 20 }
+              : { opacity: 0, y: 24, filter: "blur(6px)" }
           }
           animate={{
             opacity: 1,
             y: 0,
+            filter: "blur(0px)",
           }}
           transition={{
-            delay: shouldReduceMotion ? 0 : 1.32,
-            duration: 0.8,
-            ease,
+            delay: shouldReduceMotion ? 0 : 2.0,
+            duration: 1,
+            ease: softEase,
           }}
           className="
             mt-8
@@ -439,8 +445,8 @@ export default function Hero() {
             opacity: 1,
           }}
           transition={{
-            delay: shouldReduceMotion ? 0 : 1.55,
-            duration: 0.8,
+            delay: shouldReduceMotion ? 0 : 2.3,
+            duration: 1,
           }}
           className="
             mt-10
@@ -488,18 +494,21 @@ function Line({ children, delay, reduced }) {
             ? {
                 y: "0%",
                 opacity: 1,
+                filter: "blur(0px)",
               }
             : {
-                y: "110%",
+                y: "115%",
                 opacity: 0,
+                filter: "blur(10px)",
               }
         }
         animate={{
           y: "0%",
           opacity: 1,
+          filter: "blur(0px)",
         }}
         transition={{
-          duration: 0.9,
+          duration: 1.3,
           delay: reduced ? 0 : delay,
           ease: [0.16, 1, 0.3, 1],
         }}
