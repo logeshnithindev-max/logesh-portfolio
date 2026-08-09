@@ -2,12 +2,12 @@ import Loader from "./components/Loader";
 import CursorFollower from "./components/CursorFollower";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Projects from "./components/Process";
 import About from "./components/About";
+import Work from "./components/Work";
+import Projects from "./components/Process";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Work from "./components/Process";
+
 import useSmoothScroll from "./lib/useSmoothScroll";
 
 export default function App() {
@@ -17,16 +17,31 @@ export default function App() {
     <>
       <Loader />
       <CursorFollower />
+
       <div className="grain" />
+
       <Navbar />
+
       <main>
         <Hero />
+
         <About />
+
+        {/* WORK */}
+        <Work />
+
+        {/* PROJECTS */}
         <Projects />
+
+        {/* SKILLS */}
         <Skills />
+
+        {/* CONTACT */}
         <Contact />
       </main>
-      <Footer />
+
+    
     </>
   );
 }
+
