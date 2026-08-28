@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
-  // Premium, slow, editorial ease — slight overshoot-free deceleration
+  // Premium, slow, editorial ease
   const ease = [0.16, 1, 0.3, 1];
   const softEase = [0.19, 1, 0.22, 1];
 
@@ -22,9 +22,16 @@ export default function Hero() {
       {/* =========================================================
           LANDING CURTAIN
       ========================================================= */}
+
       {!shouldReduceMotion && (
         <motion.div
-          className="fixed inset-0 z-[100] bg-ink pointer-events-none"
+          className="
+            fixed
+            inset-0
+            z-[100]
+            bg-ink
+            pointer-events-none
+          "
           initial={{ scaleY: 1 }}
           animate={{ scaleY: 0 }}
           transition={{
@@ -41,13 +48,22 @@ export default function Hero() {
       {/* =========================================================
           MOBILE TOP LABEL
       ========================================================= */}
+
       <motion.div
         initial={
           shouldReduceMotion
             ? { opacity: 1 }
-            : { opacity: 0, y: -10, filter: "blur(6px)" }
+            : {
+                opacity: 0,
+                y: -10,
+                filter: "blur(6px)",
+              }
         }
-        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+        }}
         transition={{
           delay: shouldReduceMotion ? 0 : 1.35,
           duration: 1,
@@ -59,17 +75,35 @@ export default function Hero() {
           left-6
           right-6
           z-20
+
           flex
           items-center
           justify-between
+
           md:hidden
         "
       >
-        <span className="font-sans text-[10px] tracking-[0.32em] uppercase text-cream/45">
-          Portfolio
+        <span
+          className="
+            font-sans
+            text-[10px]
+            tracking-[0.32em]
+            uppercase
+            text-cream/45
+          "
+        >
+          Software Developer
         </span>
 
-        <span className="font-sans text-[10px] tracking-[0.25em] uppercase text-cream/35">
+        <span
+          className="
+            font-sans
+            text-[10px]
+            tracking-[0.25em]
+            uppercase
+            text-cream/35
+          "
+        >
           2026
         </span>
       </motion.div>
@@ -77,14 +111,19 @@ export default function Hero() {
       {/* =========================================================
           PORTRAIT
       ========================================================= */}
+
       <div
         className="
           relative
+
           order-1
           w-full
+
           md:order-2
           md:flex-1
+
           min-w-0
+
           flex
           items-center
           justify-center
@@ -106,8 +145,18 @@ export default function Hero() {
         <motion.div
           initial={
             shouldReduceMotion
-              ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }
-              : { opacity: 0, scale: 1.18, y: 60, filter: "blur(18px)" }
+              ? {
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                }
+              : {
+                  opacity: 0,
+                  scale: 1.18,
+                  y: 60,
+                  filter: "blur(18px)",
+                }
           }
           animate={{
             opacity: 1,
@@ -122,6 +171,7 @@ export default function Hero() {
           }}
           className="
             relative
+
             w-[min(72vw,360px)]
             h-[min(72vw,360px)]
 
@@ -136,6 +186,7 @@ export default function Hero() {
             md:rounded-none
 
             overflow-hidden
+
             md:ring-0
             ring-1
             ring-cream/10
@@ -146,7 +197,7 @@ export default function Hero() {
         >
           <img
             src={Profile}
-            alt="Logesh Nithin — UI/UX Designer"
+            alt="Logesh Nithin — Software Developer"
             className="
               w-full
               h-full
@@ -155,7 +206,8 @@ export default function Hero() {
               md:object-top
             "
             style={{
-              filter: "grayscale(1) contrast(1.08) brightness(0.97)",
+              filter:
+                "grayscale(1) contrast(1.08) brightness(0.97)",
             }}
           />
 
@@ -166,10 +218,12 @@ export default function Hero() {
               inset-0
               rounded-full
               md:hidden
+
               bg-gradient-to-t
               from-ink/20
               via-transparent
               to-transparent
+
               pointer-events-none
             "
           />
@@ -182,11 +236,14 @@ export default function Hero() {
             absolute
             inset-y-0
             left-0
+
             w-32
             lg:w-48
+
             bg-gradient-to-r
             from-ink
             to-transparent
+
             hidden
             md:block
           "
@@ -198,11 +255,14 @@ export default function Hero() {
             absolute
             inset-y-0
             right-0
+
             w-24
             lg:w-40
+
             bg-gradient-to-l
             from-ink/30
             to-transparent
+
             hidden
             md:block
           "
@@ -212,16 +272,20 @@ export default function Hero() {
       {/* =========================================================
           CONTENT
       ========================================================= */}
+
       <div
         className="
           relative
           z-10
+
           order-2
           w-full
+
           md:order-1
           md:flex-1
 
           min-w-0
+
           flex
           flex-col
           justify-center
@@ -238,12 +302,23 @@ export default function Hero() {
           md:py-20
         "
       >
-        {/* Small intro */}
+
+        {/* =====================================================
+            SMALL INTRO
+        ===================================================== */}
+
         <motion.div
           initial={
             shouldReduceMotion
-              ? { opacity: 1, y: 0 }
-              : { opacity: 0, y: 12, filter: "blur(4px)" }
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {
+                  opacity: 0,
+                  y: 12,
+                  filter: "blur(4px)",
+                }
           }
           animate={{
             opacity: 1,
@@ -255,19 +330,37 @@ export default function Hero() {
             duration: 0.9,
             ease: softEase,
           }}
-          className="mb-5 md:mb-7"
+          className="
+            mb-5
+            md:mb-7
+          "
         >
+          <span
+            className="
+              font-mono
+              text-[9px]
+              sm:text-[10px]
 
+              tracking-[0.25em]
+              uppercase
+
+              text-cream/35
+            "
+          >
+            Software Developer · Linuxoft
+          </span>
         </motion.div>
 
         {/* =====================================================
             MAIN HEADING
         ===================================================== */}
+
         <h1
           className="
             font-display
             text-cream
             font-medium
+
             tracking-[-0.035em]
             leading-[0.98]
 
@@ -280,30 +373,47 @@ export default function Hero() {
             max-w-[900px]
           "
         >
-          <Line delay={0.95} reduced={shouldReduceMotion}>
+          <Line
+            delay={0.95}
+            reduced={shouldReduceMotion}
+          >
             I'm a{" "}
             <span className="italic font-light text-cream/75">
-              creative
+              software
             </span>
           </Line>
 
-          <Line delay={1.15} reduced={shouldReduceMotion}>
-            UI/UX &amp; product
+          <Line
+            delay={1.15}
+            reduced={shouldReduceMotion}
+          >
+            developer focused
           </Line>
 
-          <Line delay={1.35} reduced={shouldReduceMotion}>
-            designer
+          <Line
+            delay={1.35}
+            reduced={shouldReduceMotion}
+          >
+            on backend systems
           </Line>
         </h1>
 
         {/* =====================================================
             DESCRIPTION
         ===================================================== */}
+
         <motion.p
           initial={
             shouldReduceMotion
-              ? { opacity: 1, y: 0 }
-              : { opacity: 0, y: 24, filter: "blur(8px)" }
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {
+                  opacity: 0,
+                  y: 24,
+                  filter: "blur(8px)",
+                }
           }
           animate={{
             opacity: 1,
@@ -320,9 +430,10 @@ export default function Hero() {
             sm:mt-8
             md:mt-9
 
-            max-w-[520px]
+            max-w-[540px]
 
             font-sans
+
             text-sm
             sm:text-base
             md:text-[15px]
@@ -334,24 +445,36 @@ export default function Hero() {
         >
           A{" "}
           <span className="text-cream/85 font-medium">
-            Product Designer
+            Backend Developer
+          </span>{" "}
+          building reliable applications and APIs with{" "}
+          <span className="text-cream/85 font-medium">
+            Python
           </span>{" "}
           and{" "}
           <span className="text-cream/85 font-medium">
-            Visual Developer
-          </span>{" "}
-          crafting thoughtful digital experiences through UI/UX,
-          responsive interfaces, and visual development.
+            Golang
+          </span>
+          , with experience in REST APIs, SQL databases,
+          and full-stack application development.
         </motion.p>
 
         {/* =====================================================
-            CTA
+            TECHNOLOGY LINE
         ===================================================== */}
+
         <motion.div
           initial={
             shouldReduceMotion
-              ? { opacity: 1, y: 0 }
-              : { opacity: 0, y: 24, filter: "blur(6px)" }
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {
+                  opacity: 0,
+                  y: 16,
+                  filter: "blur(5px)",
+                }
           }
           animate={{
             opacity: 1,
@@ -359,7 +482,70 @@ export default function Hero() {
             filter: "blur(0px)",
           }}
           transition={{
-            delay: shouldReduceMotion ? 0 : 2.0,
+            delay: shouldReduceMotion ? 0 : 1.9,
+            duration: 0.9,
+            ease: softEase,
+          }}
+          className="
+            mt-5
+            sm:mt-6
+
+            flex
+            flex-wrap
+            items-center
+            gap-x-3
+            gap-y-2
+
+            font-mono
+
+            text-[9px]
+            sm:text-[10px]
+
+            tracking-[0.12em]
+            uppercase
+
+            text-cream/30
+          "
+        >
+          <span>Python</span>
+
+          <span className="text-cream/15">•</span>
+
+          <span>Golang</span>
+
+          <span className="text-cream/15">•</span>
+
+          <span>REST APIs</span>
+
+          <span className="text-cream/15">•</span>
+
+          <span>SQL</span>
+        </motion.div>
+
+        {/* =====================================================
+            CTA
+        ===================================================== */}
+
+        <motion.div
+          initial={
+            shouldReduceMotion
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {
+                  opacity: 0,
+                  y: 24,
+                  filter: "blur(6px)",
+                }
+          }
+          animate={{
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+          }}
+          transition={{
+            delay: shouldReduceMotion ? 0 : 2.1,
             duration: 1,
             ease: softEase,
           }}
@@ -369,82 +555,99 @@ export default function Hero() {
             md:mt-10
           "
         >
+          <Magnetic>
+            <motion.a
+              href="/resume.pdf"
+              download="Logesh_Nithin_Resume.pdf"
+              data-cursor="link"
 
-<Magnetic>
-  <motion.a
-    href="/resume.pdf"
-    download="Logesh_Nithin_Resume.pdf"
-    data-cursor="link"
-    whileHover={{ scale: 1.04 }}
-    whileTap={{ scale: 0.96 }}
-    transition={{
-      type: "spring",
-      stiffness: 300,
-      damping: 20,
-    }}
-    className="
-      group
-      inline-flex
-      items-center
-      justify-center
-      gap-3
+              whileHover={{
+                scale: 1.04,
+              }}
 
-      bg-cream
-      text-ink
+              whileTap={{
+                scale: 0.96,
+              }}
 
-      px-6
-      sm:px-8
-      py-3.5
-      sm:py-4
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
 
-      rounded-full
+              className="
+                group
 
-      font-sans
-      text-[11px]
-      sm:text-xs
-      font-semibold
+                inline-flex
+                items-center
+                justify-center
+                gap-3
 
-      tracking-[0.14em]
-      uppercase
+                bg-cream
+                text-ink
 
-      transition-all
-      duration-300
+                px-6
+                sm:px-8
 
-      hover:bg-cream/90
-    "
-  >
-    <span>Get My Resume</span>
+                py-3.5
+                sm:py-4
 
-    <ArrowUpRight
-      size={16}
-      strokeWidth={2}
-      className="
-        transition-transform
-        duration-300
-        group-hover:translate-x-0.5
-        group-hover:-translate-y-0.5
-      "
-    />
-  </motion.a>
-</Magnetic>
+                rounded-full
 
+                font-sans
 
+                text-[11px]
+                sm:text-xs
+
+                font-semibold
+
+                tracking-[0.14em]
+                uppercase
+
+                transition-all
+                duration-300
+
+                hover:bg-cream/90
+              "
+            >
+              <span>
+                Get My Resume
+              </span>
+
+              <ArrowUpRight
+                size={16}
+                strokeWidth={2}
+                className="
+                  transition-transform
+                  duration-300
+
+                  group-hover:translate-x-0.5
+                  group-hover:-translate-y-0.5
+                "
+              />
+            </motion.a>
+          </Magnetic>
         </motion.div>
 
         {/* =====================================================
             BOTTOM MICRO DETAILS
         ===================================================== */}
+
         <motion.div
           initial={
             shouldReduceMotion
-              ? { opacity: 1 }
-              : { opacity: 0 }
+              ? {
+                  opacity: 1,
+                }
+              : {
+                  opacity: 0,
+                }
           }
           animate={{
             opacity: 1,
           }}
           transition={{
-            delay: shouldReduceMotion ? 0 : 2.3,
+            delay: shouldReduceMotion ? 0 : 2.4,
             duration: 1,
           }}
           className="
@@ -464,15 +667,21 @@ export default function Hero() {
             text-cream/25
           "
         >
-          <span>Design</span>
+          <span>
+            Backend
+          </span>
 
           <span className="h-1 w-1 rounded-full bg-cream/25" />
 
-          <span>Develop</span>
+          <span>
+            APIs
+          </span>
 
           <span className="h-1 w-1 rounded-full bg-cream/25" />
 
-          <span>Experience</span>
+          <span>
+            Systems
+          </span>
         </motion.div>
       </div>
     </section>
@@ -483,11 +692,16 @@ export default function Hero() {
    ANIMATED HEADING LINE
 ================================================================= */
 
-function Line({ children, delay, reduced }) {
+function Line({
+  children,
+  delay,
+  reduced,
+}) {
   return (
     <span className="block overflow-hidden">
       <motion.span
         className="block"
+
         initial={
           reduced
             ? {
@@ -501,11 +715,13 @@ function Line({ children, delay, reduced }) {
                 filter: "blur(10px)",
               }
         }
+
         animate={{
           y: "0%",
           opacity: 1,
           filter: "blur(0px)",
         }}
+
         transition={{
           duration: 1.3,
           delay: reduced ? 0 : delay,
@@ -517,3 +733,4 @@ function Line({ children, delay, reduced }) {
     </span>
   );
 }
+
