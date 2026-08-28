@@ -1,95 +1,97 @@
+```jsx
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
 
 import {
-  SiFigma,
-  SiFramer,
+  SiPython,
+  SiGo,
   SiReact,
-  SiHtml5,
-  SiCss,
-  SiTailwindcss,
+  SiPostgresql,
+  SiMysql,
+  SiGit,
+  SiGithub,
+  SiDocker,
 } from "react-icons/si";
 
 import {
-  TbBrandAdobeXd,
-  TbBrandAdobePhotoshop,
-  TbBrandAdobeIllustrator,
-  TbBrandAdobePremiere,
-} from "react-icons/tb";
-
-import {
-  Sparkles,
-  Palette,
+  Database,
+  Server,
+  Braces,
+  Globe,
 } from "lucide-react";
 
 /* =========================================================
-   TOOLS
+   BACKEND & DEVELOPMENT TOOLS
 ========================================================= */
 
-const DESIGN_TOOLS = [
+const BACKEND_TOOLS = [
   {
-    name: "Figma",
-    Icon: SiFigma,
-    color: "#F24E1E",
+    name: "Python",
+    Icon: SiPython,
+    color: "#3776AB",
   },
   {
-    name: "Adobe XD",
-    Icon: TbBrandAdobeXd,
-    color: "#FF61F6",
+    name: "Golang",
+    Icon: SiGo,
+    color: "#00ADD8",
   },
   {
-    name: "Illustrator",
-    Icon: TbBrandAdobeIllustrator,
-    color: "#FF9A00",
+    name: "REST APIs",
+    Icon: Globe,
+    color: "#61DAFB",
   },
   {
-    name: "Photoshop",
-    Icon: TbBrandAdobePhotoshop,
-    color: "#31A8FF",
+    name: "Backend Development",
+    Icon: Server,
+    color: "#A78BFA",
   },
   {
-    name: "Premiere Pro",
-    Icon: TbBrandAdobePremiere,
-    color: "#9999FF",
+    name: "SQL",
+    Icon: Database,
+    color: "#F59E0B",
   },
   {
-    name: "Canva",
-    Icon: Palette,
-    color: "#00C4CC",
+    name: "PostgreSQL",
+    Icon: SiPostgresql,
+    color: "#4169E1",
   },
 ];
 
+/* =========================================================
+   DEVELOPMENT TOOLS
+========================================================= */
+
 const DEVELOPMENT_TOOLS = [
-  {
-    name: "Framer",
-    Icon: SiFramer,
-    color: "#0055FF",
-  },
-  {
-    name: "Framer Motion",
-    Icon: Sparkles,
-    color: "#B967FF",
-  },
   {
     name: "React",
     Icon: SiReact,
     color: "#61DAFB",
   },
   {
-    name: "HTML",
-    Icon: SiHtml5,
-    color: "#E34F26",
+    name: "MySQL",
+    Icon: SiMysql,
+    color: "#4479A1",
   },
   {
-    name: "CSS",
-    Icon: SiCss,
-    color: "#1572B6",
+    name: "Git",
+    Icon: SiGit,
+    color: "#F05032",
   },
   {
-    name: "Tailwind CSS",
-    Icon: SiTailwindcss,
-    color: "#38BDF8",
+    name: "GitHub",
+    Icon: SiGithub,
+    color: "#FFFFFF",
+  },
+  {
+    name: "Docker",
+    Icon: SiDocker,
+    color: "#2496ED",
+  },
+  {
+    name: "JSON",
+    Icon: Braces,
+    color: "#F7DF1E",
   },
 ];
 
@@ -127,13 +129,18 @@ function ToolItem({
         flex
         items-center
         gap-3
+
         border-b
         border-white/[0.07]
+
         py-3
         sm:py-3.5
       "
     >
-      {/* Icon */}
+      {/* =====================================================
+          ICON
+      ===================================================== */}
+
       <div
         className="
           flex
@@ -142,12 +149,17 @@ function ToolItem({
           shrink-0
           items-center
           justify-center
+
           rounded-lg
+
           border
           border-white/[0.07]
+
           bg-white/[0.025]
+
           transition-all
           duration-300
+
           group-hover:border-white/[0.15]
           group-hover:bg-white/[0.05]
         "
@@ -159,38 +171,54 @@ function ToolItem({
           }}
           className="
             opacity-70
+
             transition-all
             duration-300
+
             group-hover:scale-110
             group-hover:opacity-100
           "
         />
       </div>
 
-      {/* Name */}
+      {/* =====================================================
+          NAME
+      ===================================================== */}
+
       <span
         className="
           text-sm
           tracking-tight
+
           text-white/55
+
           transition-colors
           duration-300
+
           group-hover:text-white
         "
       >
         {name}
       </span>
 
-      {/* Accent */}
+      {/* =====================================================
+          ACCENT
+      ===================================================== */}
+
       <span
         className="
           ml-auto
+
           h-1
           w-1
+
           rounded-full
+
           opacity-0
+
           transition-opacity
           duration-300
+
           group-hover:opacity-100
         "
         style={{
@@ -212,6 +240,8 @@ function ToolGroup({
 }) {
   return (
     <div>
+      {/* Group Header */}
+
       <div
         className="
           mb-2
@@ -223,8 +253,11 @@ function ToolGroup({
         <span
           className="
             font-mono
+
             text-[9px]
+
             tracking-[0.2em]
+
             text-white/25
           "
         >
@@ -234,15 +267,20 @@ function ToolGroup({
         <span
           className="
             font-mono
+
             text-[9px]
+
             uppercase
             tracking-[0.2em]
+
             text-white/40
           "
         >
           {title}
         </span>
       </div>
+
+      {/* Tools */}
 
       <div>
         {tools.map((tool, index) => (
@@ -271,24 +309,35 @@ export default function Skills() {
         relative
         w-full
         overflow-hidden
+
         py-20
         sm:py-24
         md:py-28
       "
     >
-      {/* Subtle ambient glow */}
+
+      {/* =====================================================
+          SUBTLE AMBIENT GLOW
+      ===================================================== */}
+
       <div
         aria-hidden
         className="
           pointer-events-none
+
           absolute
           -right-40
           top-1/2
+
           h-[350px]
           w-[350px]
+
           -translate-y-1/2
+
           rounded-full
+
           opacity-20
+
           blur-[100px]
         "
         style={{
@@ -297,23 +346,36 @@ export default function Skills() {
         }}
       />
 
+      {/* =====================================================
+          MAIN CONTAINER
+      ===================================================== */}
+
       <div
         className="
           relative
           z-10
+
           mx-auto
+
           grid
           w-full
           max-w-6xl
+
           grid-cols-1
+
           gap-12
+
           px-5
           sm:px-6
+
           md:grid-cols-[0.9fr_1.1fr]
+
           md:gap-20
+
           md:px-10
         "
       >
+
         {/* =================================================
             LEFT CONTENT
         ================================================= */}
@@ -321,7 +383,9 @@ export default function Skills() {
         <motion.div
           initial={{
             opacity: 0,
-            y: prefersReducedMotion ? 0 : 18,
+            y: prefersReducedMotion
+              ? 0
+              : 18,
           }}
           whileInView={{
             opacity: 1,
@@ -339,14 +403,23 @@ export default function Skills() {
             flex
             flex-col
             justify-between
+
             md:min-h-[360px]
           "
         >
+
+          {/* =================================================
+              INTRO
+          ================================================= */}
+
           <div>
+
             {/* Eyebrow */}
+
             <div
               className="
                 mb-5
+
                 flex
                 items-center
                 gap-3
@@ -356,6 +429,7 @@ export default function Skills() {
                 className="
                   h-px
                   w-7
+
                   bg-cream/40
                 "
               />
@@ -363,71 +437,94 @@ export default function Skills() {
               <span
                 className="
                   font-mono
+
                   text-[9px]
+
                   uppercase
+
                   tracking-[0.25em]
+
                   text-white/35
                 "
               >
-                Toolkit
+                Technical Toolkit
               </span>
             </div>
 
             {/* Heading */}
+
             <h2
               className="
                 font-quicksand
+
                 text-4xl
-                font-bold
-                leading-[1.05]
-                tracking-[-0.04em]
-                text-white
                 sm:text-5xl
                 md:text-6xl
+
+                font-bold
+
+                leading-[1.05]
+
+                tracking-[-0.04em]
+
+                text-white
               "
             >
               Skills
               <br />
 
               <span className="text-white/25">
-                & tools.
+                & technologies.
               </span>
             </h2>
 
             {/* Description */}
+
             <p
               className="
                 mt-6
+
                 max-w-md
+
                 text-sm
-                leading-relaxed
-                text-white/40
                 sm:text-base
+
+                leading-relaxed
+
+                text-white/40
               "
             >
-              A focused toolkit for designing
-              meaningful interfaces and turning
-              polished concepts into responsive,
-              interactive experiences.
+              A focused development toolkit for
+              building reliable backend services,
+              REST APIs, database-driven applications,
+              and modern full-stack solutions.
             </p>
           </div>
 
-          {/* Bottom note */}
+          {/* =================================================
+              BOTTOM NOTE
+          ================================================= */}
+
           <div
             className="
               mt-8
+
               hidden
+              md:flex
+
               items-center
               gap-3
-              md:flex
             "
           >
             <span
               className="
                 h-1.5
                 w-1.5
+
                 rounded-full
+
                 bg-emerald-400
+
                 shadow-[0_0_10px_rgba(52,211,153,0.6)]
               "
             />
@@ -435,13 +532,17 @@ export default function Skills() {
             <span
               className="
                 font-mono
+
                 text-[9px]
+
                 uppercase
+
                 tracking-[0.2em]
+
                 text-white/25
               "
             >
-              Design · Motion · Development
+              Backend · APIs · Databases
             </span>
           </div>
         </motion.div>
@@ -454,24 +555,34 @@ export default function Skills() {
           className="
             grid
             grid-cols-1
+
             gap-8
+
             sm:grid-cols-2
+
             sm:gap-10
           "
         >
+
+          {/* Backend */}
+
           <ToolGroup
             number="01"
-            title="Design & Visual"
-            tools={DESIGN_TOOLS}
+            title="Backend & APIs"
+            tools={BACKEND_TOOLS}
           />
+
+          {/* Development */}
 
           <ToolGroup
             number="02"
-            title="Development & Motion"
+            title="Development & Tools"
             tools={DEVELOPMENT_TOOLS}
           />
+
         </div>
       </div>
     </section>
   );
 }
+```
