@@ -6,22 +6,30 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 
+/* ===============================================================
+   EXPERIENCE DATA
+================================================================= */
+
 const EXPERIENCE = [
   {
-    role: "UI/UX Designer",
-    org: "Freelance",
-    period: "2025 — 2026",
-    desc: "Designed intuitive interfaces and eye-catching visuals for clients across health & wellness, AI, and promotional spaces — turning ideas into clean, modern, user-friendly designs.",
-    tools: ["Figma", "Illustrator", "Photoshop"],
+    role: "Software Developer",
+    org: "Linuxoft",
+    period: "2026 — Present",
+    desc: "Developing backend applications and REST APIs using Python and Golang, working with SQL databases and implementing reliable, maintainable solutions for real-world software requirements.",
+    tools: ["Python", "Golang", "REST APIs", "SQL"],
   },
   {
     role: "Frontend Developer Intern",
     org: "Dev Infomatrix",
     period: "Jan 2026 — Mar 2026",
-    desc: "Designed and developed responsive frontend components with HTML, CSS, JavaScript & React — delivering polished, user-friendly web experiences.",
+    desc: "Developed responsive and user-focused web interfaces using HTML, CSS, JavaScript, and React, gaining practical experience in frontend development and application workflows.",
     tools: ["HTML", "CSS", "JavaScript", "React"],
   },
 ];
+
+/* ===============================================================
+   WORK EXPERIENCE
+================================================================= */
 
 export default function WorkExperience() {
   const ref = useRef(null);
@@ -47,6 +55,7 @@ export default function WorkExperience() {
         bg-ink
         text-cream
         overflow-hidden
+
         px-3
         sm:px-4
         md:px-6
@@ -67,8 +76,14 @@ export default function WorkExperience() {
         <motion.div
           initial={
             shouldReduceMotion
-              ? { opacity: 1, y: 0 }
-              : { opacity: 0, y: 15 }
+              ? {
+                  opacity: 1,
+                  y: 0,
+                }
+              : {
+                  opacity: 0,
+                  y: 15,
+                }
           }
           whileInView={{
             opacity: 1,
@@ -97,7 +112,7 @@ export default function WorkExperience() {
                 text-cream/40
               "
             >
-              Work Experience
+              Professional Experience
             </span>
           </div>
 
@@ -117,9 +132,9 @@ export default function WorkExperience() {
               mt-4
             "
           >
-            Where I've{" "}
+            My{" "}
             <span className="text-cream/35">
-              Worked
+              Experience
             </span>
           </h2>
         </motion.div>
@@ -142,6 +157,7 @@ export default function WorkExperience() {
             md:pl-12
           "
         >
+
           {/* Static timeline */}
           <div
             className="
@@ -157,7 +173,9 @@ export default function WorkExperience() {
           {/* Animated timeline */}
           {!shouldReduceMotion && (
             <motion.div
-              style={{ height: lineHeight }}
+              style={{
+                height: lineHeight,
+              }}
               className="
                 absolute
                 left-0
@@ -213,7 +231,11 @@ export default function WorkExperience() {
    JOB ENTRY
 ================================================================= */
 
-function JobEntry({ job, index, reduced }) {
+function JobEntry({
+  job,
+  index,
+  reduced,
+}) {
   return (
     <motion.article
       initial={
@@ -277,7 +299,9 @@ function JobEntry({ job, index, reduced }) {
         }}
         transition={{
           duration: 0.4,
-          delay: reduced ? 0 : index * 0.1 + 0.2,
+          delay: reduced
+            ? 0
+            : index * 0.1 + 0.2,
           ease: [0.16, 1, 0.3, 1],
         }}
         className="
@@ -436,7 +460,9 @@ function JobEntry({ job, index, reduced }) {
               duration: 0.4,
               delay: reduced
                 ? 0
-                : index * 0.1 + 0.25 + toolIndex * 0.04,
+                : index * 0.1 +
+                  0.25 +
+                  toolIndex * 0.04,
             }}
             className="
               text-[9px]
