@@ -1,3 +1,4 @@
+```jsx
 import { useRef } from "react";
 import {
   motion,
@@ -7,7 +8,7 @@ import {
 } from "framer-motion";
 
 const paragraph =
-  "I'm a UI/UX designer who turns ideas into simple, intuitive, and visually engaging digital experiences. With a background in frontend development, I bridge design and code — creating interfaces that are beautiful, practical, and buildable.";
+  "I'm a Software Developer at Linuxoft focused on backend development using Python and Golang. I build reliable REST APIs, work with SQL databases, and develop scalable backend services with a focus on clean, maintainable code.";
 
 /* ===============================================================
    WORD-BY-WORD SCROLL REVEAL
@@ -25,10 +26,7 @@ function ScrollWords({ text, className }) {
   const list = text.split(" ");
 
   return (
-    <p
-      ref={ref}
-      className={`${className} max-w-3xl`}
-    >
+    <p ref={ref} className={`${className} max-w-3xl`}>
       {list.map((word, i) => {
         const start = i / list.length;
         const end = start + 1 / list.length;
@@ -48,28 +46,14 @@ function ScrollWords({ text, className }) {
   );
 }
 
-
 /* ===============================================================
    WORD
 ================================================================= */
 
-function Word({
-  children,
-  progress,
-  range,
-  reduced,
-}) {
-  const opacity = useTransform(
-    progress,
-    range,
-    [0.18, 1]
-  );
+function Word({ children, progress, range, reduced }) {
+  const opacity = useTransform(progress, range, [0.18, 1]);
 
-  const y = useTransform(
-    progress,
-    range,
-    [6, 0]
-  );
+  const y = useTransform(progress, range, [6, 0]);
 
   return (
     <motion.span
@@ -92,17 +76,11 @@ function Word({
   );
 }
 
-
 /* ===============================================================
    INFO CARD
 ================================================================= */
 
-function InfoCard({
-  label,
-  title,
-  detail,
-  i,
-}) {
+function InfoCard({ label, title, detail, i }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -134,10 +112,8 @@ function InfoCard({
       className="
         border-t
         border-cream/10
-
         pt-4
         sm:pt-5
-
         group
       "
     >
@@ -146,14 +122,10 @@ function InfoCard({
         className="
           font-mono
           uppercase
-
           tracking-[0.18em]
-
           text-[9px]
           sm:text-[10px]
-
           text-[#D97757]
-
           mb-2
         "
       >
@@ -164,17 +136,12 @@ function InfoCard({
       <h3
         className="
           font-display
-
           text-lg
           sm:text-xl
-
           leading-snug
-
           text-cream
-
           transition-colors
           duration-300
-
           group-hover:text-cream/85
         "
       >
@@ -185,14 +152,10 @@ function InfoCard({
       <p
         className="
           font-sans
-
           text-xs
           sm:text-sm
-
           leading-relaxed
-
           text-cream/40
-
           mt-1.5
         "
       >
@@ -201,7 +164,6 @@ function InfoCard({
     </motion.div>
   );
 }
-
 
 /* ===============================================================
    ABOUT SECTION
@@ -231,15 +193,12 @@ export default function About() {
         relative
         w-full
         overflow-hidden
-
         bg-ink
         text-cream
-
         px-3
         sm:px-4
         md:px-6
         lg:px-10
-
         py-10
         sm:py-12
         md:py-14
@@ -286,12 +245,9 @@ export default function About() {
               className="
                 font-mono
                 uppercase
-
                 tracking-[0.25em]
-
                 text-[9px]
                 sm:text-[10px]
-
                 text-[#D97757]
               "
             >
@@ -329,25 +285,19 @@ export default function About() {
               font-display
               font-black
               uppercase
-
               text-cream
-
               text-[12vw]
               sm:text-5xl
               md:text-6xl
               lg:text-[4.5rem]
-
               leading-[0.92]
-
               tracking-[-0.025em]
-
               mt-3
             "
           >
             About Me
           </motion.h2>
         </motion.div>
-
 
         {/* =====================================================
             CONTENT
@@ -357,10 +307,8 @@ export default function About() {
           className="
             md:w-[83.333%]
             md:mx-auto
-
             space-y-7
             sm:space-y-8
-
             mt-12
             sm:mt-14
             md:mt-16
@@ -372,18 +320,15 @@ export default function About() {
             text={paragraph}
             className="
               font-sans
-
               text-base
               sm:text-lg
               md:text-xl
-
               leading-[1.75]
-
               text-cream/85
             "
           />
 
-          {/* Fresher statement */}
+          {/* Professional statement */}
           <motion.p
             initial={
               shouldReduceMotion
@@ -409,21 +354,17 @@ export default function About() {
             }}
             className="
               font-sans
-
               text-sm
               sm:text-base
-
               leading-relaxed
-
               text-cream/50
-
               max-w-2xl
             "
           >
-            I'm a fresher, eager to bring that background
-            into my first professional role.
+            I enjoy solving backend problems, designing efficient APIs,
+            working with databases, and continuously improving the
+            performance, reliability, and maintainability of applications.
           </motion.p>
-
 
           {/* ===================================================
               INFO CARDS
@@ -432,21 +373,18 @@ export default function About() {
           <div
             className="
               grid
-
               grid-cols-1
               sm:grid-cols-2
-
               gap-8
               sm:gap-10
-
               pt-4
               sm:pt-6
             "
           >
             <InfoCard
-              label="Status"
-              title="Fresher"
-              detail="Ready to start my first professional role"
+              label="Current Role"
+              title="Software Developer — Linuxoft"
+              detail="Backend development with Python, Golang, REST APIs and SQL"
               i={0}
             />
 
@@ -462,3 +400,4 @@ export default function About() {
     </section>
   );
 }
+```
