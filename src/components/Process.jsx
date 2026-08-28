@@ -191,7 +191,9 @@ export default function Projects() {
           }}
           className="mb-10 sm:mb-12 md:mb-16"
         >
+
           {/* Eyebrow */}
+
           <div className="flex items-center gap-3 mb-4">
             <span
               className="
@@ -218,7 +220,9 @@ export default function Projects() {
             </span>
           </div>
 
+
           {/* Main title */}
+
           <h2
             className="
               font-display
@@ -238,18 +242,20 @@ export default function Projects() {
               max-w-2xl
             "
           >
-            Featured{" "}
+            Software{" "}
             <span className="text-cream/35">
               Projects
             </span>
           </h2>
 
+
           {/* Supporting text */}
+
           <p
             className="
               mt-4
 
-              max-w-lg
+              max-w-xl
 
               font-sans
 
@@ -261,14 +267,15 @@ export default function Projects() {
               text-cream/45
             "
           >
-            A selection of interfaces, visual explorations,
-            and digital experiences I've designed and built.
+            A selection of software projects focused on
+            backend development, REST APIs, databases,
+            and modern web applications.
           </p>
         </motion.div>
 
 
         {/* =====================================================
-            MASONRY GALLERY
+            PROJECT GALLERY
         ===================================================== */}
 
         <div
@@ -288,12 +295,13 @@ export default function Projects() {
             [column-fill:balance]
           "
         >
+
           {IMAGES.map((src, i) => (
             <motion.button
               key={`${src}-${i}`}
               type="button"
               onClick={() => setActiveIndex(i)}
-              aria-label={`Open project image ${i + 1}`}
+              aria-label={`Open software project ${i + 1}`}
               className="
                 group
                 relative
@@ -350,10 +358,14 @@ export default function Projects() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              {/* Image */}
+
+              {/* =================================================
+                  PROJECT IMAGE
+              ================================================= */}
+
               <img
                 src={src}
-                alt={`UI/UX project ${i + 1}`}
+                alt={`Software project ${i + 1}`}
                 draggable={false}
                 loading="lazy"
                 className="
@@ -371,8 +383,9 @@ export default function Projects() {
                 "
               />
 
+
               {/* =================================================
-                  OVERLAY
+                  HOVER OVERLAY
               ================================================= */}
 
               <div
@@ -431,7 +444,11 @@ export default function Projects() {
                 </span>
               </div>
 
-              {/* Mobile bottom gradient */}
+
+              {/* =================================================
+                  MOBILE GRADIENT
+              ================================================= */}
+
               <div
                 className="
                   pointer-events-none
@@ -547,13 +564,13 @@ export default function Projects() {
 
 
             {/* ===================================================
-                IMAGE
+                PROJECT IMAGE
             =================================================== */}
 
             <motion.img
               key={activeIndex}
               src={IMAGES[activeIndex]}
-              alt={`Project ${activeIndex + 1}`}
+              alt={`Software project ${activeIndex + 1}`}
               draggable={false}
               className="
                 max-h-[88vh]
@@ -604,8 +621,9 @@ export default function Projects() {
               }}
             />
 
+
             {/* ===================================================
-                MOBILE IMAGE COUNTER
+                IMAGE COUNTER
             =================================================== */}
 
             <div
@@ -635,10 +653,10 @@ export default function Projects() {
               {" / "}
               {String(IMAGES.length).padStart(2, "0")}
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>
     </section>
   );
 }
-
