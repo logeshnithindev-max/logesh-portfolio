@@ -1,24 +1,28 @@
+
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ArrowUp,
-  ArrowUpRight,
-  Mail,
-} from "lucide-react";
+import { ArrowUpRight, ArrowUp, Mail } from "lucide-react";
 
-import {
-  SiGithub,
-  SiDribbble,
-  SiBehance,
-} from "react-icons/si";
-
+import { SiGithub } from "react-icons/si";
 import { TbBrandLinkedin } from "react-icons/tb";
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
 
 const EMAIL = "logeshnithin.dev@gmail.com";
 
 const LINKEDIN_URL =
   "https://www.linkedin.com/in/logesh-nithin-b79051366/";
+
+const GITHUB_URL =
+  "https://github.com/logeshnithindev-max";
+
+
+/* =========================================================
+   SOCIALS
+========================================================= */
 
 const SOCIALS = [
   {
@@ -28,20 +32,15 @@ const SOCIALS = [
   },
   {
     label: "GitHub",
-    href: "#",
+    href: GITHUB_URL,
     Icon: SiGithub,
   },
-  {
-    label: "Dribbble",
-    href: "#",
-    Icon: SiDribbble,
-  },
-  {
-    label: "Behance",
-    href: "#",
-    Icon: SiBehance,
-  },
 ];
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
 
 export default function Contact() {
   return (
@@ -55,7 +54,11 @@ export default function Contact() {
         bg-ink
       "
     >
-      {/* Ambient glow */}
+
+      {/* =================================================
+          AMBIENT GLOW
+      ================================================= */}
+
       <div
         aria-hidden
         className="
@@ -76,9 +79,10 @@ export default function Contact() {
         }}
       />
 
-      {/* =====================================================
-          CONTACT
-      ===================================================== */}
+
+      {/* =================================================
+          MAIN CONTACT
+      ================================================= */}
 
       <div
         className="
@@ -88,30 +92,50 @@ export default function Contact() {
           max-w-7xl
           px-5
           py-20
+
           sm:px-6
           sm:py-24
+
           md:px-10
           md:py-28
         "
       >
+
         <div
           className="
             grid
             grid-cols-1
             gap-14
+
             md:grid-cols-[1.35fr_0.65fr]
             md:items-end
             md:gap-20
           "
         >
-          {/* LEFT */}
+
+          {/* =================================================
+              LEFT CONTENT
+          ================================================= */}
+
           <div>
+
             {/* Eyebrow */}
+
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              initial={{
+                opacity: 0,
+                y: 12,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.5,
+              }}
               className="
                 mb-6
                 flex
@@ -119,7 +143,14 @@ export default function Contact() {
                 gap-3
               "
             >
-              <span className="h-px w-8 bg-cream/40" />
+
+              <span
+                className="
+                  h-px
+                  w-8
+                  bg-cream/40
+                "
+              />
 
               <span
                 className="
@@ -132,92 +163,152 @@ export default function Contact() {
               >
                 Get in touch
               </span>
+
             </motion.div>
 
-            {/* Heading */}
+
+            {/* Main Heading */}
+
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
               transition={{
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="
                 max-w-4xl
+
                 font-quicksand
+
                 text-4xl
-                font-bold
-                leading-[1.03]
-                tracking-[-0.045em]
-                text-white
                 sm:text-5xl
                 md:text-7xl
+
+                font-bold
+
+                leading-[1.03]
+
+                tracking-[-0.045em]
+
+                text-white
               "
             >
-              Let's create something
+              Let's build something
               <span className="text-white/25">
-                {" "}meaningful.
+                {" "}useful.
               </span>
             </motion.h2>
 
+
             {/* Description */}
+
             <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{
+                opacity: 0,
+                y: 15,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
               transition={{
                 duration: 0.6,
                 delay: 0.1,
               }}
               className="
                 mt-6
+
                 max-w-lg
+
                 text-sm
-                leading-relaxed
-                text-white/40
                 sm:text-base
+
+                leading-relaxed
+
+                text-white/40
               "
             >
-              I'm Logesh, a product & UI/UX designer
-              focused on creating clear, thoughtful
-              and engaging digital experiences.
+              I'm Logesh, a Software Developer at Linuxoft
+              focused on backend development, building
+              reliable REST APIs and database-driven
+              applications using Python and Golang.
             </motion.p>
+
           </div>
 
-          {/* RIGHT */}
+
+          {/* =================================================
+              RIGHT CONTENT
+          ================================================= */}
+
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
             transition={{
               duration: 0.6,
               delay: 0.15,
             }}
-            className="flex flex-col"
+            className="
+              flex
+              flex-col
+            "
           >
+
             {/* Availability */}
+
             <div
               className="
                 mb-7
+
                 flex
                 w-fit
+
                 items-center
                 gap-2
+
                 rounded-full
+
                 border
                 border-white/[0.08]
+
                 bg-white/[0.025]
+
                 px-3
                 py-1.5
               "
             >
+
               <span
                 className="
                   h-1.5
                   w-1.5
+
                   rounded-full
+
                   bg-emerald-400
+
                   shadow-[0_0_10px_rgba(52,211,153,0.7)]
                 "
               />
@@ -225,37 +316,52 @@ export default function Contact() {
               <span
                 className="
                   font-mono
+
                   text-[9px]
+
                   uppercase
+
                   tracking-[0.18em]
+
                   text-white/45
                 "
               >
                 Open to opportunities
               </span>
+
             </div>
 
+
             {/* Email CTA */}
+
             <a
               href={`mailto:${EMAIL}`}
               className="
                 group
+
                 flex
+
                 items-center
                 justify-between
+
                 border-b
                 border-white/[0.09]
+
                 pb-4
               "
             >
+
               <span
                 className="
                   text-sm
+                  sm:text-base
+
                   text-white/60
+
                   transition-colors
                   duration-300
+
                   group-hover:text-white
-                  sm:text-base
                 "
               >
                 {EMAIL}
@@ -266,14 +372,20 @@ export default function Contact() {
                   flex
                   h-8
                   w-8
+
                   items-center
                   justify-center
+
                   rounded-full
+
                   border
                   border-white/[0.08]
+
                   text-white/35
+
                   transition-all
                   duration-300
+
                   group-hover:-translate-y-1
                   group-hover:border-white/20
                   group-hover:text-white
@@ -281,39 +393,50 @@ export default function Contact() {
               >
                 <ArrowUpRight size={15} />
               </span>
+
             </a>
 
-            {/* Socials */}
-            <div className="mt-6 flex items-center gap-2">
+
+            {/* Social Links */}
+
+            <div
+              className="
+                mt-6
+                flex
+                items-center
+                gap-2
+              "
+            >
+
               {SOCIALS.map(
                 ({ label, href, Icon }) => (
                   <a
                     key={label}
                     href={href}
-                    target={
-                      href.startsWith("http")
-                        ? "_blank"
-                        : undefined
-                    }
-                    rel={
-                      href.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={label}
+
                     className="
                       group
+
                       flex
                       h-9
                       w-9
+
                       items-center
                       justify-center
+
                       rounded-full
+
                       border
                       border-white/[0.08]
+
                       text-white/35
+
                       transition-all
                       duration-300
+
                       hover:-translate-y-1
                       hover:border-white/20
                       hover:bg-white/[0.05]
@@ -325,6 +448,7 @@ export default function Contact() {
                       className="
                         transition-transform
                         duration-300
+
                         group-hover:scale-110
                       "
                     />
@@ -332,125 +456,210 @@ export default function Contact() {
                 )
               )}
 
+
+              {/* Email */}
+
               <a
                 href={`mailto:${EMAIL}`}
                 aria-label="Email"
+
                 className="
                   group
+
                   flex
                   h-9
                   w-9
+
                   items-center
                   justify-center
+
                   rounded-full
+
                   border
                   border-white/[0.08]
+
                   text-white/35
+
                   transition-all
                   duration-300
+
                   hover:-translate-y-1
                   hover:border-white/20
                   hover:bg-white/[0.05]
                   hover:text-white
                 "
               >
-                <Mail size={15} />
+                <Mail
+                  size={15}
+                  className="
+                    transition-transform
+                    duration-300
+
+                    group-hover:scale-110
+                  "
+                />
               </a>
+
             </div>
+
           </motion.div>
+
         </div>
+
       </div>
 
-      {/* =====================================================
-          FOOTER BAR
-      ===================================================== */}
 
-      <div className="border-t border-white/[0.07]">
+      {/* =================================================
+          FOOTER BAR
+      ================================================= */}
+
+      <div
+        className="
+          border-t
+          border-white/[0.07]
+        "
+      >
+
         <div
           className="
             mx-auto
+
             flex
+
             max-w-7xl
+
             flex-col
+
             gap-4
+
             px-5
             py-5
+
             sm:px-6
+
             md:flex-row
             md:items-center
             md:justify-between
+
             md:px-10
           "
         >
+
+          {/* Copyright */}
+
           <p
             className="
               font-mono
+
               text-[9px]
+
               uppercase
+
               tracking-[0.15em]
+
               text-white/25
             "
           >
             © {new Date().getFullYear()} Logesh Nithin
           </p>
 
-          <div className="flex items-center gap-5">
+
+          {/* Bottom Info */}
+
+          <div
+            className="
+              flex
+              items-center
+              gap-5
+            "
+          >
+
             <span
               className="
                 hidden
+
                 font-mono
+
                 text-[9px]
+
                 uppercase
+
                 tracking-[0.15em]
+
                 text-white/20
+
                 sm:block
               "
             >
-              Product · UI/UX · Development
+              Python · Golang · APIs · SQL · React
             </span>
 
+
+            {/* Back to top */}
+
             <a
-              href="#top"
+              href="#home"
+
               className="
                 group
+
                 inline-flex
+
                 items-center
                 gap-2
+
                 font-mono
+
                 text-[9px]
+
                 uppercase
+
                 tracking-[0.15em]
+
                 text-white/35
+
                 transition-colors
                 duration-300
+
                 hover:text-white
               "
             >
+
               Back to top
 
               <span
                 className="
                   flex
+
                   h-7
                   w-7
+
                   items-center
                   justify-center
+
                   rounded-full
+
                   border
                   border-white/[0.08]
+
                   transition-all
                   duration-300
+
                   group-hover:-translate-y-1
                   group-hover:border-white/20
                 "
               >
                 <ArrowUp size={12} />
               </span>
+
             </a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
   );
 }
-
