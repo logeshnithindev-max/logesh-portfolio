@@ -1,4 +1,3 @@
-```jsx
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
@@ -585,4 +584,3 @@ export default function Skills() {
     </section>
   );
 }
-```
