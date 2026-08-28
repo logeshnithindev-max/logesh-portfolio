@@ -1,4 +1,3 @@
-```jsx
 import { useRef } from "react";
 import {
   motion,
@@ -400,4 +399,3 @@ export default function About() {
     </section>
   );
 }
-```
